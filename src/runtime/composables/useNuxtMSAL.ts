@@ -4,11 +4,12 @@ import { useRuntimeConfig } from 'nuxt/app'
 export const useNuxtMSAL = () => {
     const config = useRuntimeConfig()
 
+    console.log('lol')
     const msalConfig = {
         auth: {
-            clientId: config.public.clientId,
+            clientId: config.public.CLIENT_ID,
             authority: 'https://login.microsoftonline.com',
-            redirectUri: config.public.redirectUri,
+            redirectUri: config.public.REDIRECT_URI,
         },
         cache: {
             cacheLocation: BrowserCacheLocation.LocalStorage,

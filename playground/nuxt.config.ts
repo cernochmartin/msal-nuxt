@@ -1,11 +1,14 @@
-import module from '..'
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [module],
+  modules: ['../src/module'],
   msal: {
-    authority: '',
     clientId: '',
     redirectUri: ''
+  },
+  runtimeConfig: {
+    public: {
+      CLIENT_ID: process.env.CLIENT_ID,
+      REDIRECT_URI: process.env.REDIRECT_URI
+    }
   }
 })
