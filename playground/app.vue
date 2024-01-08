@@ -1,7 +1,10 @@
 <script setup lang="ts">
-const login = useNuxtMSAL()
+// function callMsal() {
+//   const client = useNuxtMsal()
+//   console.log(client)
+// }
 </script>
 <template>
   <h1>MSAL Nuxt 3 Module</h1>
-  <button @click="login">Click</button>
+  <button @click="useNuxtMsal()">Login</button>
 </template>

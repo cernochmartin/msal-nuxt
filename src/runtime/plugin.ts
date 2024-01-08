@@ -1,10 +1,23 @@
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
-import { useNuxtMSAL } from './composables/useNuxtMSAL'
+import { PublicClientApplication } from '@azure/msal-browser'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-    console.log('exists')
+    const config = useRuntimeConfig().public
 
-    const config = useRuntimeConfig()
+    const msalConfig = {
+        auth: {
+            clientId: config.CLIENT_ID,
+            authority: 'https://login.microsoftonline.com',
+            redirectUri: config.REDIRECT_URI,
+            postLogoutRedirectUri: config.REDIRECT_URI,
+            navigateToLoginRequestUrl: true,
+        },
+        cache: {
+            cacheLocation: 'sessionStorage',
+            storeAuthStateInCookie: false,
+        }
+    }
 
-    const auth = useNuxtMSAL()
+    const msalClient = new PublicClientApplication(msalConfig)
+    nuxtApp.provide('msal-client', msalClient)
 })

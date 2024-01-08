@@ -1,4 +1,5 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver, addImportsDir } from '@nuxt/kit'
+import { fileURLToPath } from 'url'
 
 export interface ModuleOptions {
     authority: string
@@ -20,8 +21,11 @@ export default defineNuxtModule<ModuleOptions>({
         redirectUri: ''
     },
     setup(options, nuxt) {
-        const { resolve } = createResolver(import.meta.url)
+        const resolver = createResolver(import.meta.url)
+        const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
 
-        addPlugin(resolve('./runtime/plugin'))
+        addPlugin(resolver.resolve('./runtime/plugin'))
+
+        addImportsDir(resolver.resolve(runtimeDir, 'composables'))
     }
 })
