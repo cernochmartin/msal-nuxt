@@ -1,4 +1,4 @@
-import { defineNuxtModule } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 
 export interface ModuleOptions {
     authority: string
@@ -15,11 +15,13 @@ export default defineNuxtModule<ModuleOptions>({
         }
     },
     defaults: {
-        authority: '',
+        authority: 'https://login.microsoftonline.com',
         clientId: '',
         redirectUri: ''
     },
     setup(options, nuxt) {
-        
+        const { resolve } = createResolver(import.meta.url)
+
+        addPlugin(resolve('./runtime/plugin'))
     }
 })

@@ -1,57 +1,58 @@
 {
-    "name": "nuxt-msal",
-    "version": "1.0.0",
-    "license": "MIT",
-    "repository": "https://github.com/cernochmartin/msal-nuxt",
-    "type": "module",
-    "author": {
-      "name": "Martin Černoch",
-      "email": "cernochm@outlook.cz"
-    },
-    "contributors": [
-      "cernochmartin"
-    ],
-    "exports": {
-      ".": {
-        "import": "./dist/module.mjs",
-        "require": "./dist/module.cjs"
-      }
-    },
-    "main": "./dist/module.cjs",
-    "types": "./dist/types.d.ts",
-    "files": [
-      "dist"
-    ],
-    "scripts": {
-      "prepack": "nuxt-module-build",
-      "dev": "nuxi dev playground",
-      "dev:build": "nuxi build playground",
-      "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
-      "release": "nuxt-module-build && changelogen --release --push && pnpm publish",
-      "lint": "eslint --ext .js,.ts,.vue"
-    },
-    "dependencies": {
-      "@nuxt/kit": "^3.0.0"
-    },
-    "devDependencies": {
-      "@nuxt/devtools": "^1.0.6",
-      "@nuxt/module-builder": "latest",
-      "@nuxtjs/eslint-config-typescript": "latest",
-      "@types/node": "^20.10.7",
-      "eslint": "latest",
-      "nuxt": "^3.0.0",
-      "typescript": "^5.3.3"
-    },
-    "keywords": [
-        "nuxt",
-        "directus",
-        "nuxtjs",
-        "nuxt-module",
-        "vue3",
-        "nuxt3",
-        "nuxt-msal",
-        "msal-nuxt",
-        "msal"
-    ],
-    "packageManager": "bun@1.0.21"
+  "name": "nuxt-msal",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/cernochmartin/msal-nuxt",
+  "type": "module",
+  "author": {
+    "name": "Martin Černoch",
+    "email": "cernochm@outlook.cz"
+  },
+  "contributors": [
+    "cernochmartin"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "release": "nuxt-module-build && changelogen --release --push && pnpm publish",
+    "lint": "eslint --ext .js,.ts,.vue"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^3.6.0",
+    "@nuxt/kit": "^3.0.0"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^1.0.6",
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/node": "^20.10.7",
+    "eslint": "latest",
+    "nuxt": "^3.0.0",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "nuxt",
+    "directus",
+    "nuxtjs",
+    "nuxt-module",
+    "vue3",
+    "nuxt3",
+    "nuxt-msal",
+    "msal-nuxt",
+    "msal"
+  ],
+  "packageManager": "bun@1.0.21"
 }
