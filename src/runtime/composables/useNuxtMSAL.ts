@@ -1,5 +1,9 @@
 export const useNuxtMsal = (): any => {
     const { $msalClient } = useNuxtApp()
-    // add function to redirect to login
+    
+    navigateTo('https://login.microsoftonline.com', { external: true })
+
     return $msalClient
+
+    
 }
