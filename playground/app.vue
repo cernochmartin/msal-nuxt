@@ -1,4 +1,4 @@
 <template>
-  <h1>MSAL Nuxt 3 Module</h1>
-  <button @click="useNuxtMsal()">Login</button>
+  <h1>MSAL Nuxt 3 module</h1>
+  <button @click="">Login</button>
 </template>

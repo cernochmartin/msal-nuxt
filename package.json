@@ -32,20 +32,19 @@
   },
   "dependencies": {
     "@azure/msal-browser": "^3.6.0",
-    "@nuxt/kit": "^3.0.0"
+    "@nuxt/kit": "^3.9.3"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.0.6",
+    "@nuxt/devtools": "^1.0.8",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@types/node": "^20.10.7",
+    "@types/node": "^20.11.5",
     "eslint": "^8.56.0",
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.9.3",
     "typescript": "^5.3.3"
   },
   "keywords": [
     "nuxt",
-    "directus",
     "nuxtjs",
     "nuxt-module",
     "vue3",

@@ -20,33 +20,13 @@ export default defineNuxtPlugin(async (nuxtApp) => {
 
     const msalClient = useState('msalClient', () => new PublicClientApplication(msalConfig))
 
-    async function initialize() {
-        await msalClient.value.initialize()
-
-        await msalClient.value
-            .handleRedirectPromise() 
-            .then(handleResponse)
-            .catch((err) => {
-                throw new Error(err)
-            });
-
-        msalClient.value.addEventCallback((event) => {
-            if (event.eventType === EventType.LOGIN_SUCCESS) {
-                setupTokenExpirationTimer()
-            }
-        })
-
+    async function login() {
+        await msalClient.value.loginRedirect()
     }
 
-    function handleResponse(resp: any) {
-        if (resp?.account) {
-            setupTokenExpirationTimer()
-        } else {
-            console.log('login')
-        }
+    async function logOut() {
+        await msalClient.value.logoutRedirect()
     }
 
-    return initialize
-
-    nuxtApp.provide('msal-client', msalClient)
+    return nuxtApp.provide('login', login)
 })
