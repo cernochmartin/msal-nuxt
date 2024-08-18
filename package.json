@@ -40,7 +40,7 @@
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/node": "^20.11.5",
     "eslint": "^8.56.0",
-    "nuxt": "^3.9.3",
+    "nuxt": "^3.12.4",
     "typescript": "^5.3.3"
   },
   "keywords": [
