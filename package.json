@@ -31,16 +31,16 @@
     "lint": "eslint --ext .js,.ts,.vue"
   },
   "dependencies": {
-    "@azure/msal-browser": "^3.6.0",
-    "@nuxt/kit": "^3.9.3"
+    "@azure/msal-browser": "^4.0.2",
+    "@nuxt/kit": "latest"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.8",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
-    "@types/node": "^20.11.5",
-    "eslint": "^8.56.0",
-    "nuxt": "^3.12.4",
+    "@types/node": "^22.13.0",
+    "eslint": "^9.19.0",
+    "nuxt": "latest",
     "typescript": "^5.3.3"
   },
   "keywords": [
