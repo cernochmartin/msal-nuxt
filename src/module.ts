@@ -1,5 +1,4 @@
 import { defineNuxtModule, addPlugin, createResolver, addImportsDir } from '@nuxt/kit'
-import { fileURLToPath } from 'url'
 
 export interface ModuleOptions {
   auth: {
@@ -12,15 +11,15 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'msal-nuxt',
-    configKey: 'msal'
+    configKey: 'msal',
   },
 
   defaults: {
     auth: {
       clientId: '',
       authority: 'https://login.microsoftonline.com/common',
-      redirectUri: ''
-    }
+      redirectUri: '',
+    },
   },
 
   setup(options, nuxt) {
@@ -31,5 +30,5 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolver.resolve('./runtime/plugins/msal.client'))
     addImportsDir(resolver.resolve('./runtime/composables'))
     // nuxt.options.router.middleware.push(resolver.resolve('./runtime/middleware'))
-  }
+  },
 })

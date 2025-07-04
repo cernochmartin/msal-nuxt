@@ -1,4 +1,4 @@
-import { PublicClientApplication } from '@azure/msal-browser'
+import type { PublicClientApplication } from '@azure/msal-browser'
 
 declare module '#app' {
   interface NuxtApp {

@@ -1,5 +1,5 @@
-import { useMsal } from './useMsal'
 import { ref, onMounted } from 'vue'
+import { useMsal } from './useMsal'
 
 export const useLogin = () => {
   const loginFn = ref<() => Promise<any>>()
@@ -10,7 +10,7 @@ export const useLogin = () => {
     loginFn.value = async () => {
       try {
         const response = await msal.loginPopup({
-          scopes: ['user.read']
+          scopes: ['user.read'],
         })
 
         if (response?.account) {
@@ -19,7 +19,8 @@ export const useLogin = () => {
         }
 
         return response
-      } catch (err) {
+      }
+      catch (err) {
         console.error('Login failed:', err)
         throw err
       }

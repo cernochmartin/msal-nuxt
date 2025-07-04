@@ -2,9 +2,10 @@ import jwtDecode from 'jwt-decode'
 
 export const getUserFromToken = (token: string) => {
   try {
-    const decoded: any = jwtDecode(token)
+    const decoded: string = jwtDecode(token)
     return decoded
-  } catch (err) {
+  }
+  catch (err) {
     console.error('Invalid token:', err)
     return null
   }

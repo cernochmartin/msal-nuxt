@@ -12,5 +12,7 @@ const signIn = async () => {
 </script>
 
 <template>
-  <button @click="signIn">Login with Microsoft</button>
+  <button @click="signIn">
+    Login with Microsoft
+  </button>
 </template>
