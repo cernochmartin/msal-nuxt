@@ -6,33 +6,20 @@ export const useLogin = () => {
 
   onMounted(() => {
     const msal = useMsal()
-
     loginFn.value = async () => {
-      try {
-        const response = await msal.loginPopup({
-          scopes: ['user.read'],
-        })
-
-        if (response?.account) {
-          msal.setActiveAccount(response.account)
-          document.cookie = `msal_id_token=${response.idToken}; path=/`
-        }
-
-        return response
-      }
-      catch (err) {
-        console.error('Login failed:', err)
-        throw err
-      }
+      console.log('[useLogin] launching loginPopup...')
+      const res = await msal.loginPopup({ scopes: ['user.read'] })
+      console.log('[useLogin] response:', res)
+      return res
     }
   })
 
   const login = async () => {
     if (!loginFn.value) {
-      console.warn('MSAL not ready yet or SSR context.')
+      console.warn('[useLogin] login not initialized')
       return null
     }
-    return await loginFn.value()
+    return loginFn.value()
   }
 
   return { login }

@@ -21,3 +21,12 @@ declare module 'vue' {
     $msal: PublicClientApplication
   }
 }
+
+import type { PublicClientApplication } from '@azure/msal-browser'
+
+declare module '#app' {
+  interface NuxtApp {
+    $msal: PublicClientApplication
+  }
+}
+

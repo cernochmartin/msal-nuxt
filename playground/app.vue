@@ -1,18 +1,20 @@
 <script setup lang="ts">
-let login: () => void
+const loginFn = ref<(() => Promise<any>) | null>(null)
+const result = ref<any>(null)
 
 onMounted(() => {
-  login = useLogin().login
+  const { login } = useLogin()
+  loginFn.value = login
 })
 
-const signIn = async () => {
-  const result = await login()
-  console.log(result)
+async function handleLogin() {
+  if (!loginFn.value) return
+  result.value = await loginFn.value()
+  console.log('[Page] login result:', result.value)
 }
 </script>
 
 <template>
-  <button @click="signIn">
-    Login with Microsoft
-  </button>
+  <button @click="handleLogin">Login with Microsoft</button>
+  <pre>{{ result }}</pre>
 </template>

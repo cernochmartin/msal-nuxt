@@ -1,11 +1,9 @@
-import { inject } from 'vue'
-
 export const useMsal = () => {
-  const msal = inject('msal')
+  const { $msal } = useNuxtApp()
 
-  if (!msal) {
-    throw new Error('MSAL instance not found. Did you forget to install the module?')
+  if (!$msal) {
+    throw new Error('[msal-nuxt] MSAL instance not found. Did you install the plugin?')
   }
 
-  return msal
+  return $msal
 }
