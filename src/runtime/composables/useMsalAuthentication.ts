@@ -65,8 +65,8 @@ export const useMsalAuthentication = () => {
   const loadAccount = () => {
     const accounts = msal.getAllAccounts()
     if (accounts.length > 0) {
-      currentAccount.value = accounts[0]
-      msal.setActiveAccount(accounts[0])
+      currentAccount.value = accounts[0]!
+      msal.setActiveAccount(accounts[0]!)
       isAuthenticated.value = true
     }
     return currentAccount.value

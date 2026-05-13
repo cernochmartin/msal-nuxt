@@ -5,7 +5,7 @@ export default defineNuxtModule({
   meta: {
     name: 'msal-nuxt',
     configKey: 'msal',
-    compatibility: { nuxt: '^3.0.0' },
+    compatibility: { nuxt: '^4.0.0' },
   },
   defaults: {
     auth: {

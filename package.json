@@ -1,7 +1,7 @@
 {
   "name": "msal-nuxt",
   "version": "1.0.0",
-  "description": "Microsoft Authentication Library (MSAL) integration for Nuxt 3",
+  "description": "Microsoft Authentication Library (MSAL) integration for Nuxt 4",
   "repository": "your-org/msal-nuxt",
   "license": "MIT",
   "type": "module",
@@ -24,9 +24,9 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "dev": "npm run dev:prepare && nuxt dev playground",
+    "dev:build": "nuxt build playground",
+    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxt prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
@@ -35,22 +35,22 @@
   },
   "dependencies": {
     "@azure/msal-browser": "^4.27.0",
-    "@nuxt/kit": "^3.20.2",
+    "@nuxt/kit": "^4.4.5",
     "defu": "^6.1.4",
     "jwt-decode": "^4.0.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.7.0",
-    "@nuxt/eslint-config": "^1.12.1",
+    "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^3.20.2",
-    "@nuxt/test-utils": "^3.21.0",
+    "@nuxt/schema": "^4.4.5",
+    "@nuxt/test-utils": "^4.0.3",
     "@types/node": "latest",
     "changelogen": "^0.6.2",
-    "eslint": "^9.39.1",
-    "nuxt": "^3.20.2",
-    "typescript": "~5.8.3",
-    "vitest": "^3.2.4",
+    "eslint": "^9.39.4",
+    "nuxt": "^4.4.5",
+    "typescript": "~5.9.3",
+    "vitest": "^4.1.6",
     "vue-tsc": "^2.2.12"
   },
   "peerDependencies": {

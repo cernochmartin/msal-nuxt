@@ -12,9 +12,9 @@ export const useAccount = () => {
       account.value = null
       return null
     }
-    account.value = accounts[0]
-    msal.setActiveAccount(accounts[0])
-    return accounts[0]
+    account.value = accounts[0]!
+    msal.setActiveAccount(accounts[0]!)
+    return accounts[0]!
   }
 
   const setActiveAccount = (accountInfo: AccountInfo | null) => {

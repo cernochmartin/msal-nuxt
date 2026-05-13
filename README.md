@@ -5,7 +5,7 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Microsoft Authentication Library (MSAL) integration for Nuxt 3. Provides composables and a plugin to authenticate users via Azure AD / Microsoft Entra ID using `@azure/msal-browser`.
+Microsoft Authentication Library (MSAL) integration for Nuxt 4. Provides composables and a plugin to authenticate users via Azure AD / Microsoft Entra ID using `@azure/msal-browser`.
 
 ## Features
 
