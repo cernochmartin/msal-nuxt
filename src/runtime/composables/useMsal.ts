@@ -1,9 +1,7 @@
-export const useMsal = () => {
-  const { $msal } = useNuxtApp()
+import type { PublicClientApplication } from '@azure/msal-browser'
+import { useNuxtApp } from '#app'
 
-  if (!$msal) {
-    throw new Error('[msal-nuxt] MSAL instance not found. Did you install the plugin?')
-  }
-
-  return $msal
+export const useMsal = (): PublicClientApplication => {
+  const nuxtApp = useNuxtApp()
+  return nuxtApp.$msal as PublicClientApplication
 }

@@ -11,6 +11,11 @@ declare module '#app' {
         clientId: string
         authority: string
         redirectUri: string
+        postLogoutRedirectUri?: string
+        cacheLocation?: string
+        storeAuthStateInCookie?: boolean
+        navigateToLogin?: boolean
+        loginRoute?: string
       }
     }
   }
@@ -22,11 +27,4 @@ declare module 'vue' {
   }
 }
 
-import type { PublicClientApplication } from '@azure/msal-browser'
-
-declare module '#app' {
-  interface NuxtApp {
-    $msal: PublicClientApplication
-  }
-}
-
+export {}
